@@ -10,11 +10,7 @@ namespace auth {
 	{
 	public:
 		Auth();
-		void signUp(std::string,std::string,int);
 		void signIn(std::string,int);
-		void setId(int);
-		void setName(std::string);
-		void setPin(std::string);
 		~Auth();
 	
 	private: 

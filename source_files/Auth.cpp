@@ -14,37 +14,6 @@ namespace auth{
 
 	}
 
-	void Auth::setId(std::string id = ""){
-		this->id = id;
-	}
-
-	void Auth::setName(std::string name = ""){
-		this->name = name;
-	}
-
-	void Auth::setPin(int pin = 0){
-		this->pin = pin;
-	}
-
-	void Auth::signUp(){
-
-		if (setId(""))
-		{
-			std::cout << "Id is empty\n";
-		} else 
-		if (setName(""))
-		{
-			std::cout << "Name field is empty\n";
-		}else 
-		if (setPin(0))
-		{
-			std::cout << "Pin field empty\n";		
-		}else {
-			std::cout << "Account successful\n";
-			// sign in
-		}
-	}
-
 	void Auth::signIn(std::string id = "", int pin = 0){
 
 		if (id == "")

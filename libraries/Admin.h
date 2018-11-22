@@ -8,11 +8,20 @@
 namespace admin
 {
 	
-	class Admin : public User
+	class Admin
 	{
 	public:
 		Admin();
+		void addStudent(student::students& stu);
+		void addStaff(staff::staffs& staff);
+		void removeStudent(student::students& stu);
+		void removeStaff(staff::staffs& staff);
+		void editStudent(student::students& stu);
+		void editStaff(staff::staffs&);
 		~Admin();
+	private:
+		int status; //checking to see whether you are a student(2) or staff(1)
+
 		
 	};
 
