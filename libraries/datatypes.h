@@ -14,20 +14,31 @@ struct courseType
 	std::string code;	
 	std::string Title;	
 	std::string Lecturer;	
-	std::string Location;
+	int score;
+	std::string grade;
 	int semester;
 	int level;
-	char Grade;
 };
 
 }
+
+
+// for every human(they would inherit)
+struct UserType
+{
+	int id;
+	std::string name;
+	char gender;
+	int pin;
+	int status;
+};
 
 // For staff
 namespace staff {
 
 struct staffType
 {
-	std::string Name;
+
 };
 
 }
@@ -38,8 +49,6 @@ namespace student {
 
 struct studentType
 {
-	std::string IndexNumber;
-	std::string Name;
 	std::string Programme;
 
 };
