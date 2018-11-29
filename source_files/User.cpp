@@ -1,24 +1,22 @@
 #include <iostream>
 #include <string>
 #include "libraries\User.h"
-
+#include <cstdlib>
 
 namespace user {
 
 	
+	User::User(){
 
-	User::User(std::string name = "", std::string id = ""){
+	}
+
+	User::User(std::string name = ""){
 		if (name = "")
 		{
 			cout << "Name field is empty\n";
 			// throw an error
-		} else
-		if (id = "")
-		{
-			cout << "Id field is empty\n";
 		}else {
 			this->setName(name);
-			this->setId(id);
 		}
 	}
 
@@ -30,8 +28,17 @@ namespace user {
 		this->name = name;
 	}
 	
-	void User::setId(std::string id){
-		this->id = id;
+	void User::setId(){
+		
+		// generate a random 8 digits here
+
+	}
+
+	void User::setPin(){
+
+		// generate a random 5 digits here
+		int r = rand() * this->getId();
+		this->pin = (r/10000);
 	}
 
 	string User::getName(){
@@ -40,5 +47,9 @@ namespace user {
 
 	string User::getId(){
 		return this->id;
+	}
+
+	int User::getPin(){
+		return this->pin;
 	}
 }
