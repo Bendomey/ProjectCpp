@@ -9,7 +9,7 @@ USER header file*/
 
 namespace staff {
 
-	class staffs : public User
+	class staffs //: public User
 	{
 	public:
 		staffs();

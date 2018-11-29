@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "libraries\Auth.h"
+#include "..\libraries\Auth.h"
 
 
 

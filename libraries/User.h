@@ -10,8 +10,8 @@ public:
 	User(std::string,std::string);
 	void setName(std::string);
 	void setId(std::string);
-	string getName();
-	string getId();
+	std::string getName();
+	std::string getId();
 	~User();
 	
 private:

@@ -6,12 +6,13 @@
 
 // header files
 #include <iostream>
-#include "courses.h"
-#include "staffs.h"
-#include "students.h"
+#include "..\source_files\courses.cpp"
+#include "..\source_files\Staff.cpp"
+#include "..\source_files\Student.cpp"
 #include "datatypes.h"
-#include "admin.h"
-#include "auth.h"
+// #include "Database.h"
+#include "..\source_files\Admin.cpp"
+#include "..\source_files\Auth.cpp"
 
 // namespaces
 using namespace course;

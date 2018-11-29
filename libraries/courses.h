@@ -3,7 +3,7 @@
 
 /*courses class is for creating new courses for a semester and level and assigning lecturer to the
 class*/
-
+#include <iostream>
 #include <string>
 
 namespace course{
@@ -11,15 +11,16 @@ namespace course{
 	class courses
 	{
 	public:
-		courses(std::string,std::string,std::string,std::string,int,char,int);
+		courses();
+		courses(std::string,std::string,std::string,int,int,int);
 		~courses();
 		void setCourseCode(std::string);
 		void setCourseTitle(std::string);
 		void setCourseLecturer(std::string);
-		void setCourseLocation(std::string);
 		void setLevel(int);
 		void setSemester(int);
-		void setCourseGrade(char);
+		void setCourseScore(int);
+		void setCourseGrade(std::string);
 		// get the private values
 		std::string getCourseCode();
 		std::string getCourseTitle();
@@ -27,15 +28,17 @@ namespace course{
 		std::string getCourseLocation();
 		int getLevel();
 		int getSemester();
-		char getCourseGrade();
+		int getCourseScore();
+		std::string getCourseGrade();
 		
 	private:
 		std::string CourseCode;
 		std::string CourseTitle;
 		std::string CourseLecturer;
-		std::string CourseLocation;
+		// std::string CourseLocation;
 		int Level;
-		char CourseGrade;
+		int CourseScore;
+		std::string CourseGrade;
 		int Semester;
 		
 	};//class courses

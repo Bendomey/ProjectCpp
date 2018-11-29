@@ -1,17 +1,19 @@
 #include <iostream>
 #include <string>
-#include "libraries\courses.h"
+#include "..\libraries\courses.h"
 
 namespace course{
 
+	courses::courses(){
+		// no parameters
+	}
 	// construtor with arguments
-	courses::courses(std::string code, std::string title, std::string lecturerName, std::string loc, int level, char grade, int sem){
+	courses::courses(std::string code, std::string title, std::string lecturerName, int level, int score, int sem){
 		this->setCourseCode(code);
 		this->setCourseTitle(title);
 		this->setCourseLecturer(lecturerName);
-		this->setCourseLocation(loc);
 		this->setLevel(level);
-		this->setCourseGrade(grade);
+		this->setCourseScore(score);
 		this->setSemester(sem);
 	}
 
@@ -33,16 +35,17 @@ namespace course{
 		this->CourseLecturer = lecturerName;
 	}
 
-	void courses::setCourseLocation(std::string loc) {
-		this->CourseLocation = loc;
-	}
 
 	void courses::setLevel (int level) {
 		this->Level = level;
 	}
 
-	void courses::setCourseGrade(char grade) {
-		this->CourseCode = grade;
+	void courses::setCourseScore(int score){
+		this->CourseScore = score;
+	}
+
+	void courses::setCourseGrade(std::string grade) {
+		this->CourseGrade = grade;
 	}
 
 	void courses::setSemester(int sem) {
@@ -63,10 +66,6 @@ namespace course{
 		return this->CourseLecturer;
 	}
 
-	std::string courses::getCourseLocation() {
-		return this->CourseLocation;
-	}
-
 	int courses::getLevel() {
 		return this->Level;
 	}
@@ -75,11 +74,51 @@ namespace course{
 		return this->Semester;
 	}
 
-	char courses::getCourseGrade() {
+	int courses::getCourseScore(){
+		return this->CourseScore;
+	}
+
+	std::string courses::getCourseGrade() {
+		
+		if (this->getCourseScore() >= 80 && this->getCourseScore() <= 100)
+		{
+			this->setCourseGrade("A");
+		}else
+		if (this->getCourseScore() >= 75 && this->getCourseScore() < 80)
+		{
+			this->setCourseGrade("B+");
+		}else 
+		if (this->getCourseScore() >= 70 && this->getCourseScore() < 75)
+		{
+			this->setCourseGrade("B");
+		}else 
+		if (this->getCourseScore() >= 65 && this->getCourseScore() < 70)
+		{
+			this->setCourseGrade("C+");
+		}else 
+		if (this->getCourseScore() >= 60 && this->getCourseScore() < 65)
+		{
+			this->setCourseGrade("C");
+		}else 
+		if (this->getCourseScore() >= 55 && this->getCourseScore() < 60)
+		{
+			this->setCourseGrade("D+");
+		}else 
+		if (this->getCourseScore() >= 50 && this->getCourseScore() < 55)
+		{
+			this->setCourseGrade("D");
+		}else 
+		if (this->getCourseScore() >= 45 && this->getCourseScore() < 50)
+		{
+			this->setCourseGrade("E");
+		}else
+		if (this->getCourseScore() >= 0 && this->getCourseScore() < 45)
+		{
+			this->setCourseGrade("F");
+		}
+
 		return this->CourseGrade;
+
 	}
 
 }//course
-
-
-	

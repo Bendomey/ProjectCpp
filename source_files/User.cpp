@@ -5,7 +5,9 @@
 
 namespace user {
 
-	user::user(std::string name = "", std::string id = ""){
+	
+
+	User::User(std::string name = "", std::string id = ""){
 		if (name = "")
 		{
 			cout << "Name field is empty\n";
@@ -20,23 +22,23 @@ namespace user {
 		}
 	}
 
-	user::~user(){
-
+	User::~User(){
+		// object deleted
 	}
 
-	void user::setName(std::string name){
+	void User::setName(std::string name){
 		this->name = name;
 	}
 	
-	void user::setId(std::string id){
+	void User::setId(std::string id){
 		this->id = id;
 	}
 
-	string user::getName(){
+	string User::getName(){
 		return this->name;
 	}
 
-	string user::getId(){
+	string User::getId(){
 		return this->id;
 	}
 }

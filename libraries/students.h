@@ -11,7 +11,7 @@
 
 namespace student {
 
-	class students : public User
+	class students //: public User
 	{
 	public:
 		students();
