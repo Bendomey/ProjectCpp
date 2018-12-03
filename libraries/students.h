@@ -2,23 +2,23 @@
 
 #ifndef STUDENT_H
 #define STUDENT_H 
-#include <iostream>
-#include <string>
-// #include "User.h"
+
+#include "User.h"
 
 
 /*student header file contains methods and properties  for all students,you can create new student */
 
 namespace student {
 
-	class students //: public User
+	class students : public User
 	{
 	public:
-		students();
+		students(std::string,char);
+		int getStatus();
 		~students();
 
 	private:
-		// int status;
+		int status = 3;
 		
 	};
 

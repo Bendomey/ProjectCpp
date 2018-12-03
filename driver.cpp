@@ -1,12 +1,16 @@
 #include <iostream>
 #include <cstdlib>
-#include <math.h>
+#include "student.cpp"
+#include "staff.cpp"
+// #include "user.h"
+
+
 
 using namespace std;
 int main(int argc, char const *argv[])
 {
-	cout << "Generate a number: \n";
-
-	int ;
+	student a("Ben",'m');
+	cout << a.getName();
+	
 	return 0;
 }

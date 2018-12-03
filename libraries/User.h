@@ -7,15 +7,13 @@ admin and student*/
 class User
 {
 public:
-	User(std::string,char,int);
+	User(std::string,char);
 	void setName(std::string);
 	void setGender(char);
-	void setStatus(int);
 	void setId();
 	void setPin();
 	std::string getName();
 	char getGender();
-	int getStatus();
 	int getId();
 	int getPin();
 	~User();
@@ -25,7 +23,7 @@ private:
 	std::string name;
 	char gender;
 	int pin;
-	int status;
+
 };
 
 

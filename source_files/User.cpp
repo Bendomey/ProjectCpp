@@ -5,11 +5,10 @@
 
 
 
-	User::User(std::string name, char gender, int stat){
+	User::User(std::string name, char gender){
 		
 			this->setName(name);
 			this->setGender(gender);
-			this->setStatus(stat);
 			this->setId();
 			this->setPin();
 		
@@ -27,9 +26,6 @@
 		this->gender = gender;
 	}
 
-	void User::setStatus(int stat) {
-		this->name = stat;
-	}
 	
 	void User::setId(){
 		
@@ -52,9 +48,6 @@
 		return this->gender;
 	}
 
-	int User::getStatus() {
-		return this->status;
-	}
 
 	int User::getId(){
 		return this->id;

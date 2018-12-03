@@ -20,7 +20,7 @@ namespace admin
 		void editStaff(staff::staffs&);
 		~Admin();
 	private:
-		int status; //checking to see whether you are a student(2) or staff(1)
+		// int status; //checking to see whether you are a student(2) or staff(1)
 
 		
 	};

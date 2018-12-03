@@ -13,7 +13,7 @@
 // #include "Database.h"
 #include "..\source_files\Admin.cpp"
 #include "..\source_files\Auth.cpp"
-#include "..\source_files\User.cpp"
+// #include "..\source_files\User.cpp"
 
 // namespaces
 using namespace course;
