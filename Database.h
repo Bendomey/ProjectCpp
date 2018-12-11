@@ -17,8 +17,14 @@ struct  User{
 
 
 struct Course{
-	
-}
+	std::string CourseCode;
+	std::string CourseTitle;
+	std::string CourseLecturer;
+	std::string CourseGrade;
+	int Level;
+	int CourseScore;
+	int Semester;
+};
 
 
 class Database{
