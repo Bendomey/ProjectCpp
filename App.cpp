@@ -1,5 +1,5 @@
 #include "School.h"
-
+Akankobateng1
 
 int main(int argc, char const *argv[]){
 	Database db;

@@ -16,6 +16,11 @@ struct  User{
 };
 
 
+struct Course{
+	
+}
+
+
 class Database{
 	FILE *file;
 	struct User user;

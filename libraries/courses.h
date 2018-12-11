@@ -8,8 +8,7 @@ class*/
 
 namespace course{
 
-	class courses
-	{
+	class courses{
 	public:
 		courses();
 		courses(std::string,std::string,std::string,int,int,int);
@@ -30,7 +29,7 @@ namespace course{
 		int getSemester();
 		int getCourseScore();
 		std::string getCourseGrade();
-		
+
 	private:
 		std::string CourseCode;
 		std::string CourseTitle;
@@ -40,9 +39,9 @@ namespace course{
 		int CourseScore;
 		std::string CourseGrade;
 		int Semester;
-		
+
 	};//class courses
 
 }
-	
+
 #endif //COURSES_h
