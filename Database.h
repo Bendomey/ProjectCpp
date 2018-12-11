@@ -29,8 +29,8 @@ struct Course{
 
 class Database{
 	FILE *file;
-	struct User user;
 public:
+	struct User user;
 	/*
 	*constructor that handles opening the file for read and write
 	*/
@@ -58,7 +58,7 @@ public:
 		return false;
 	}
 
-	User fetchUser(int id){
+	void fetchUser(int id){
 		while(fread(&user,sizeof(struct User),1,file)){
 			cout << "First Name : " << user.first_name << " last name : " << user.last_name << endl;
 		}
@@ -66,6 +66,7 @@ public:
 
 ~Database(){
 	fclose(file);
+	cout << "File closed.. " << endl;
 }
 
 };
