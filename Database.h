@@ -39,7 +39,6 @@ public:
 		file = fopen("Database/database.dat", "r+");
 		if (file == NULL){
 			std::cout << "Unable to open file\n";
-			exit();
 		}
 		std::cout  << "File opened";
 	}
@@ -52,7 +51,7 @@ public:
 	}
 
 	bool create(struct Course course){
-		if(fwrite($course,sizeof(struct Course),1,file)){
+		if(fwrite(&course,sizeof(struct Course),1,file)){
 			return true;
 		}
 
@@ -61,7 +60,7 @@ public:
 
 	User fetchUser(int id){
 		while(fread(&user,sizeof(struct User),1,file)){
-			printf("%s %s \n",user.first_name,user.last_name);
+			cout << "First Name : " << user.first_name << " last name : " << user.last_name << endl;
 		}
 	}
 
