@@ -1,5 +1,5 @@
 #ifndef DATABASE_H
-#define DATABASE_H 
+#define DATABASE_H
 
 #include <stdio.h>
 // #include <conio.h>
@@ -16,39 +16,48 @@ struct  User{
 };
 
 
-class Database
-{
+class Database{
 	FILE *file;
+	struct User user;
 public:
-	Database();
+	/*
+	*constructor that handles opening the file for read and write
+	*/
+	Database(){
+		// open the file for writing
+		file = fopen("Database/database.dat", "r+");
+		if (file == NULL){
+			std::cout << "Unable to open file\n";
+			exit();
+		}
+		std::cout  << "File opened";
+	}
+
 	bool create(struct User user){
 	if(fwrite(&user,sizeof(struct User),1,file)){
 		return true;
 	}
-	return false;
-}
+		return false;
+	}
 
-	~Database();
-	
-};
-	
-Database::Database() {
+	bool create(struct Course course){
+		if(fwrite($course,sizeof(struct Course),1,file)){
+			return true;
+		}
 
-	// open the file for writing
-	file = fopen("Database/database.dat", "r+");
+		return false;
+	}
 
-	if (file == NULL)
-	{
-		std::cout << "Unable to open file\n";
-	}else
-		std::cout  << "File opened";		
-}
+	User fetchUser(int id){
+		while(fread(&user,sizeof(struct User),1,file)){
+			printf("%s %s \n",user.first_name,user.last_name);
+		}
+	}
 
-
-
-
-Database::~Database(){
+~Database(){
 	fclose(file);
 }
+
+};
 
 #endif
