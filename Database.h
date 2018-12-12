@@ -30,38 +30,41 @@ struct Course{
 class Database{
 	FILE *file;
 public:
-	struct User user;
 	/*
 	*constructor that handles opening the file for read and write
 	*/
 	Database(){
 		// open the file for writing
-		file = fopen("Database/database.dat", "r+");
-		if (file == NULL){
-			std::cout << "Unable to open file\n";
-		}
-		std::cout  << "File opened";
+
 	}
 
 	bool create(struct User user){
-	if(fwrite(&user,sizeof(struct User),1,file)){
-		return true;
-	}
+		file = fopen("Database/database.dat", "wb");
+		if(file == !NULL){
+			fwrite(user,sizeof(struct Course),1,file);
+			fclose(file);
+			return true;
+		}
 		return false;
 	}
 
 	bool create(struct Course course){
-		if(fwrite(&course,sizeof(struct Course),1,file)){
+		file = fopen("Database/database.dat", "wb");
+		if(file == !NULL){
+			fwrite(course,sizeof(struct Course),1,file);
+			fclose(file);
 			return true;
 		}
-
 		return false;
 	}
 
 	void fetchUser(int id){
-		while(fread(&user,sizeof(struct User),1,file)){
+		struct User user;
+		file = fopen("Database/database.dat", "rb");
+		while(fread(user,sizeof(struct User),1,file)){
 			cout << "First Name : " << user.first_name << " last name : " << user.last_name << endl;
 		}
+		fclose(file);
 	}
 
 ~Database(){
